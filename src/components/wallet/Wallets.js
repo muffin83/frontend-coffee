@@ -59,8 +59,11 @@ export const Wallets = ({children}) => {
 
   return (
     <ConnectionProvider endpoint={endpoint}>
+      
       <WalletProvider wallets={wallets} onError={onError} autoConnect={autoConnect}>
+        
         <MaterialUIWalletDialogProvider>
+          
           {children}
         </MaterialUIWalletDialogProvider>
       </WalletProvider>

@@ -25,7 +25,7 @@ import {
 } from "../../contracts/bean"
 
 const CardWrapper = styled(Card)({
-  background: "rgb(251 241 225)",
+  background: "transparent",
   marginBottom: 24,
 });
 
@@ -38,6 +38,10 @@ const ButtonContainer = styled(Grid)(({ theme }) => ({
     },
   },
 }));
+
+const UnderlinedGrid = styled(Grid)(() => ({
+  borderBottom: '1px solid black'
+}))
 
 export default function BakeCard() {
   function useQuery() {
@@ -162,7 +166,7 @@ export default function BakeCard() {
     <CardWrapper>
       {loading && <LinearProgress color="secondary" />}
       <CardContent>
-        <Grid
+        <UnderlinedGrid
           container
           justifyContent="space-between"
           alignItems="center"
@@ -170,8 +174,8 @@ export default function BakeCard() {
         >
           <Typography variant="body1">Contract</Typography>
           <Typography variant="h5">{contractSolBalance} SOL</Typography>
-        </Grid>
-        <Grid
+        </UnderlinedGrid>
+        <UnderlinedGrid
           container
           justifyContent="space-between"
           alignItems="center"
@@ -179,8 +183,8 @@ export default function BakeCard() {
         >
           <Typography variant="body1">Wallet</Typography>
           <Typography variant="h5">{walletSolBalance} SOL</Typography>
-        </Grid>
-        <Grid
+        </UnderlinedGrid>
+        <UnderlinedGrid
           container
           justifyContent="space-between"
           alignItems="center"
@@ -188,7 +192,7 @@ export default function BakeCard() {
         >
           <Typography variant="body1">Your Beans</Typography>
           <Typography variant="h5">{minersCount} BEANS</Typography>
-        </Grid>
+        </UnderlinedGrid>
         <Box paddingTop={4} paddingBottom={3}>
           <Box>
             <PriceInput
@@ -216,7 +220,7 @@ export default function BakeCard() {
               disabled={!address || +bakeSOL === 0 || loading}
               onClick={bake}
             >
-              BAKE BEANS
+              ROAST BEANS
             </Button>
           </Box>
           <Divider />
@@ -242,7 +246,7 @@ export default function BakeCard() {
                 disabled={!address || loading}
                 onClick={reBake}
               >
-                RE-BAKE
+                DARK ROAST
               </Button>
             </Grid>
             <Grid item flexGrow={1} marginLeft={1} marginTop={3}>
@@ -253,7 +257,7 @@ export default function BakeCard() {
                 disabled={!address || loading}
                 onClick={eatBeans}
               >
-                EAT BEANS
+                BREW COFFEE
               </Button>
             </Grid>
           </ButtonContainer>

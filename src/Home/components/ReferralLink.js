@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import { styled } from "@mui/system";
 
 const CardWrapper = styled(Card)({
-  background: "rgb(251 241 225)",
+  background: "transparent",
 });
 
 const Input = styled("input")(({ theme }) => ({

@@ -16,9 +16,10 @@ const Wrapper = styled("div")(({ theme }) => ({
 export default function Header() {
   return (
     <Wrapper>
-      <img src={logo} alt="" width={"100%"} style={{ marginTop: 0 }} />
-      <Typography variant="h6" marginTop={-3}>
-        The SOL Reward Pool with the tastiest daily return and lowest dev fee
+      <img src={logo} alt="" width={"400px"} />
+      <hr />
+      <Typography variant="h7" marginTop={-3}>
+        The SOL reward pool with the richest daily return and lowest dev fee
       </Typography>
     </Wrapper>
   );

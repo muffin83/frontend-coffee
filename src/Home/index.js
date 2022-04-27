@@ -1,4 +1,4 @@
-import { styled } from "@mui/system";
+import { flexbox, styled } from "@mui/system";
 
 import Header from "./components/Header";
 import BakeCard from "./components/BakeCard";
@@ -19,46 +19,69 @@ import {
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import imgKiss from '../assets/kisspng-white-coffee-stain-photography-cup-photoscape-effects-5aca1065ae80f1.0483033315231919097148.png';
+import imgCup from '../assets/cup-coffee-stain-6.png';
+
 const Wrapper = styled("div")(({ theme }) => ({
-  maxWidth: 400,
+  position: 'relative',
+  maxWidth: 500,
   margin: "0 auto",
   [theme.breakpoints.down("sm")]: {
     maxWidth: "100%",
   },
 }));
 
+const WalletButton = styled("div")(() => ({
+  display: 'flex',
+  flexDirection: 'row-reverse'
+}))
+
 export default function Home() {
   //const { address } = useAuthContext();
   const wallet = useWallet();
 
   return (
-    <Wrapper>
-      <Table>
-        <TableBody>
-          <TableRow>
-            <TableCell>
-              <MaterialUIWalletMultiButton />
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-      <Header />
-      <BakeCard />
-      <NutritionFacts />
-      <ReferralLink address={wallet.publicKey && wallet.publicKey.toBase58()} />
-      <Footer />
+    <>
+      <WalletButton>
+        <MaterialUIWalletMultiButton />
+      </WalletButton>
+      <Wrapper>
+        <Header />
+        <BakeCard />
+        <NutritionFacts />
+        <ReferralLink address={wallet.publicKey && wallet.publicKey.toBase58()} />
+        <Footer />
 
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-    </Wrapper>
+        <div style={{
+          position: 'absolute',
+          left: -120,
+          bottom: 250,
+          zIndex: -1
+        }}>
+          <img src={imgKiss} width={100} height={200} />
+        </div>
+
+        <div style={{
+          position: 'absolute',
+          right: -270,
+          bottom: -50,
+          zIndex: -1,
+        }}>
+          <img src={imgCup} width={450} height={450} rotate={"90deg"}/>
+        </div>
+
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+      </Wrapper>
+    </>
   );
 }

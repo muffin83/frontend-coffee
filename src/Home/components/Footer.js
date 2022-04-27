@@ -4,6 +4,7 @@ import { config } from "../../config";
 import esIcon from "../assets/ESIcon.png";
 import tgIcon from "../assets/TGIcon.png";
 import twIcon from "../assets/TWIcon.png";
+import dcIcon from "../assets/DCIcon.png";
 
 export default function Footer() {
   return (
@@ -21,6 +22,11 @@ export default function Footer() {
       <Grid item>
         <a href="https://twitter.com/BakedBeansMiner" target="__blank">
           <img src={twIcon} alt="" width={48} height={48} />
+        </a>
+      </Grid>
+      <Grid item>
+        <a href="https://twitter.com/BakedBeansMiner" target="__blank">
+          <img src={dcIcon} alt="" width={48} height={48} />
         </a>
       </Grid>
     </Grid>
