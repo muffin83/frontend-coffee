@@ -42,10 +42,17 @@ export default function Home() {
 
   return (
     <>
-      <WalletButton>
-        <MaterialUIWalletMultiButton />
-      </WalletButton>
+      
       <Wrapper>
+      <WalletButton>
+        <MaterialUIWalletMultiButton variant="text" color="black" style={{
+          border: "5px solid black",
+          fontWeight: 900,
+          background: "transparent",
+        }}>
+          Connect
+        </MaterialUIWalletMultiButton>
+      </WalletButton>
         <Header />
         <BakeCard />
         <NutritionFacts />
@@ -67,7 +74,7 @@ export default function Home() {
           bottom: -50,
           zIndex: -1,
         }}>
-          <img src={imgCup} width={450} height={450} rotate={"90deg"}/>
+          <img src={imgCup} width={450} height={450} rotate={"90deg"} />
         </div>
 
         <ToastContainer
