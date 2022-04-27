@@ -6,6 +6,7 @@ import { styled } from "@mui/system";
 
 const CardWrapper = styled(Card)({
   background: "transparent",
+  border: "5px solid #555",
 });
 
 const Input = styled("input")(({ theme }) => ({

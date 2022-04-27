@@ -27,6 +27,7 @@ import {
 const CardWrapper = styled(Card)({
   background: "transparent",
   marginBottom: 24,
+  border: "5px solid #555",
 });
 
 const ButtonContainer = styled(Grid)(({ theme }) => ({
